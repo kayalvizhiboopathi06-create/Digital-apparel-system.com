@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Purple Black AI Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:linear-gradient(135deg,#0b0014,#1a0033);
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    background:black;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav a{
+    color:#b980ff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+    padding:60px;
+    text-align:center;
+}
+#home h1{
+    font-size:42px;
+    color:#d7b3ff;
+}
+#home p{
+    margin-top:15px;
+    font-size:18px;
+    color:#eee;
+}
+
+/* CARDS */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:35px;
+}
+.card{
+    background:#12001f;
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(185,128,255,0.4);
+}
+
+/* CHATBOT CENTER BIG */
+.chatbot-wrapper{
+    display:flex;
+    justify-content:center;
+    margin:80px 0;
+}
+
+.chatbox{
+    width:420px;
+    background:black;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(185,128,255,0.7);
+}
+
+.chat-header{
+    background:linear-gradient(135deg,#6f00ff,#a855f7);
+    padding:15px;
+    text-align:center;
+    font-size:20px;
+    border-radius:20px 20px 0 0;
+}
+
+#chat{
+    height:320px;
+    padding:15px;
+    overflow-y:auto;
+    background:#0f001a;
+}
+
+.user{
+    text-align:right;
+    color:#c084fc;
+    margin:8px 0;
+}
+.bot{
+    text-align:left;
+    color:#7c3aed;
+    margin:8px 0;
+}
+
+.chat-input{
+    display:flex;
+}
+.chat-input input{
+    width:75%;
+    padding:12px;
+    border:none;
+    background:#1f0033;
+    color:white;
+}
+.chat-input button{
+    width:25%;
+    border:none;
+    background:#7c3aed;
+    color:white;
+    cursor:pointer;
+}
+
+
+ .complaint-box {
+        width: 420px;
+        background: #0f0f0f;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 0 25px rgba(170, 0, 255, 0.6);
+        border: 1px solid #7a00cc;
+    }
+
+    .complaint-box h2 {
+        text-align: center;
+        color: #c77dff;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .complaint-box input,
+    .complaint-box textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #1c1c1c;
+        color: white;
+        font-size: 14px;
+    }
+
+    .complaint-box textarea {
+        resize: none;
+        height: 90px;
+    }
+
+    .complaint-box input::placeholder,
+    .complaint-box textarea::placeholder {
+        color: #aaa;
+    }
+
+    .complaint-box button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #9d00ff, #5a00b3);
+        color: white;
+        transition: 0.3s;
+    }
+
+    .complaint-box button:hover {
+        background: linear-gradient(135deg, #b84dff, #7a00cc);
+        box-shadow: 0 0 12px #b84dff;
+    }
+
+/* Notification */
+    .notification {
+        position: fixed;
+        top: 30px;
+        right: -400px;
+        background: #0f0f0f;
+        border-left: 5px solid #9d00ff;
+        padding: 18px 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(170, 0, 255, 0.6);
+        transition: 0.5s;
+        color: #c77dff;
+        font-weight: bold;
+    }
+
+    .notification.show {
+        right: 30px;
+    }
+
+
+.wa-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#7c3aed;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    text-align:center;
+    font-size:30px;
+    line-height:60px;
+    box-shadow:0 0 15px rgba(185,128,255,0.8);
+    text-decoration:none;
+    z-index:999;
+}
+.wa-float:hover{
+    background:#a855f7;
+}
+
+
+/* FOOTER */
+footer{
+    background:black;
+    padding:15px;
+    text-align:center;
+    color:#b980ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/917824935361?text=Hello%20NeoPurple%20Tech,%20I%20need%20more%20details"
+   target="_blank"
+   class="wa-float">
+   💬
+</a>
+
+
+
+
+
+
+<!-- NAVBAR -->
+<nav>
+    <h2>NeoPurple Tech</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#chatbot">Chatbot</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h1>Next-Gen AI Solutions</h1>
+    <p>Smart • Secure • Scalable</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Modern responsive websites.</p>
+        </div>
+        <div class="card">
+            <h3>AI Chatbots</h3>
+            <p>Smart conversational AI systems.</p>
+        </div>
+        <div class="card">
+            <h3>Support</h3>
+            <p>24/7 customer assistance.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CHATBOT CENTER -->
+<section id="chatbot">
+    <h2>AI Chatbot Assistant</h2>
+    <div class="chatbot-wrapper">
+        <div class="chatbox">
+            <div class="chat-header">Ask Our AI 🤖</div>
+            <div id="chat"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your question...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<center>
+
+<div class="complaint-box">
+    <h2>Complaint Box</h2>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="issue" placeholder="Enter your complaint here..."></textarea>
+    <button id="submitBtn">Submit Complaint</button>
+</div>
+</center>
+<div class="notification" id="notify">
+ Complaint Submitted Successfully
+</div>
+
+<script>
+document.getElementById("submitBtn").addEventListener("click", function(){
+    // Show notification
+    const notify = document.getElementById("notify");
+    notify.classList.add("show");
+
+    // Hide after 3 seconds
+    setTimeout(()=>notify.classList.remove("show"),3000);
+
+    // Clear inputs
+    document.getElementById("name").value="";
+    document.getElementById("email").value="";
+    document.getElementById("issue").value="";
+});
+</script>
+
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>
+        <a href="https://wa.me/917824935361?text=Hello%20NeoPurple%20Tech,%20I%20need%20more%20details%20about%20your%20services"
+           target="_blank"
+           style="color:#c084fc; text-decoration:none; font-size:18px; font-weight:bold;">
+           📱 +91 78249 35361 (Chat on WhatsApp)
+        </a>
+    </p>
+
+    <p>Email: support@neopurpletech.com</p>
+    <p>Mon – Fri | 9 AM – 6 PM</p>
+
+<p>
+📍 
+<a href="https://www.google.com/maps/search/?api=1&query=Chennai+Tamil+Nadu"
+   target="_blank"
+   style="color:#c084fc; text-decoration:none; font-weight:bold;">
+   View Our Location
+</a>
+</p>
+</section>
+
+
+<footer>
+    © 2026 NeoPurple Tech | All Rights Reserved
+</footer>
+
+
+
+
+
+
+
+<script>
+
+    
+function sendMessage(){
+    let input = document.getElementById("userInput");
+    let msg = input.value.toLowerCase().trim();
+    if(msg==="") return;
+
+    let chat = document.getElementById("chat");
+    chat.innerHTML += `<div class="user">${msg}</div>`;
+
+    let reply = botReply(msg);
+    chat.innerHTML += `<div class="bot">${reply}</div>`;
+
+    chat.scrollTop = chat.scrollHeight;
+    input.value="";
+}
+
+if(msg.includes("contact") || msg.includes("whatsapp")){
+    return `
+    You can chat with us instantly on WhatsApp 💬<br><br>
+    <a href="https://wa.me/917824935361?text=Hello%20NeoPurple%20Tech,%20I%20have%20a%20query"
+       target="_blank"
+       style="color:#c084fc; font-weight:bold;">
+       👉 Click here to open WhatsApp
+    </a>`;
+}
+
+
+
+
+
+// Send message function
+function sendMessage() {
+    let input = document.getElementById("userInput");
+    let msg = input.value.trim().toLowerCase(); // convert to lowercase
+    if(msg === "") return;
+
+    let chat = document.getElementById("chat");
+
+    // Show user message
+    chat.innerHTML += `<div class="user">${input.value}</div>`;
+
+    // Get bot reply
+    let reply = botReply(msg);
+
+    // Show bot message
+    chat.innerHTML += `<div class="bot">${reply}</div>`;
+
+    // Scroll chat to bottom
+    chat.scrollTop = chat.scrollHeight;
+
+    // Clear input
+    input.value = "";
+}
+
+// Bot reply logic
+function botReply(msg) {
+    if(msg.includes("company") || msg.includes("about")) {
+        return "NeoPurple Tech is a next-gen IT company providing AI, Web Development, and IT solutions.";
+    }
+    if(msg.includes("service") || msg.includes("offer")) {
+        return "We provide Web Development, AI Chatbots, and 24/7 Support services.";
+    }
+    if(msg.includes("contact") || msg.includes("whatsapp")) {
+        return "📱 WhatsApp: +91 78249 35361 | Email: support@neopurpletech.com";
+    }
+    if(msg.includes("hello") || msg.includes("hi")) {
+        return "Hello! 😊 How can I assist you today?";
+    }
+
+    // Default
+    return "Thank you for your query! Our team at NeoPurple Tech will assist you.";
+}
+
+function sendComplaint() {
+    fetch("http://127.0.0.1:5000/complaint", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            issue: document.getElementById("issue").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Complaint submitted successfully ✅");
+    });
+}
+
+
+
+function submitComplaint(){
+    // 1️⃣ show notification
+    const notify = document.getElementById("notify");
+    notify.classList.add("show");
+
+    // 2️⃣ hide after 3 seconds
+    setTimeout(()=>notify.classList.remove("show"),3000);
+
+    // 3️⃣ clear input fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("issue").value = "";
+}
+
+</script>
+
+
+<script>
+// Chatbot
+function sendMessage(){
+    let input = document.getElementById("userInput");
+    let msg = input.value.trim().toLowerCase();
+    if(msg==="") return;
+
+    let chat = document.getElementById("chat");
+    chat.innerHTML += `<div class="user">${input.value}</div>`;
+
+    let reply = botReply(msg);
+    chat.innerHTML += `<div class="bot">${reply}</div>`;
+
+    chat.scrollTop = chat.scrollHeight;
+    input.value="";
+}
+
+function botReply(msg){
+    if(msg.includes("company") || msg.includes("about"))
+        return "NeoPurple Tech is a next-gen IT company providing AI, Web Development, and IT solutions.";
+    if(msg.includes("service") || msg.includes("offer"))
+        return "We provide Web Development, AI Chatbots, and 24/7 Support services.";
+    if(msg.includes("contact") || msg.includes("whatsapp"))
+        return "📱 WhatsApp: +91 78249 35361 | Email: support@neopurpletech.com";
+    if(msg.includes("hello") || msg.includes("hi"))
+        return "Hello! 😊 How can I assist you today?";
+    return "Thank you for your query! Our team at NeoPurple Tech will assist you.";
+}
+
+// Complaint notification
+document.getElementById("submitBtn").addEventListener("click", function(){
+    const notify = document.getElementById("notify");
+    notify.classList.add("show");
+    setTimeout(()=>notify.classList.remove("show"),3000);
+
+    // clear inputs
+    document.getElementById("name").value="";
+    document.getElementById("email").value="";
+    document.getElementById("issue").value="";
+});
+
+
+
+fetch("http://127.0.0.1:5000/complaint", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        issue: document.getElementById("issue").value
+    })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
